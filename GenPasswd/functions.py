@@ -92,7 +92,7 @@ def unwanted_characters(unwanted, possibility):
     return possibility
 
 
-def pass_gen(length, unwanted, only_char, include, repeat):
+def main(length=False, unwanted=False, only_char=False, include=False, repeat='y'):
     possibility = str(
         '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"%&'()*,+-./:;<=>?@[]^_`{|}~”$‘~#\\''')
     if unwanted:
@@ -110,9 +110,9 @@ def pass_gen(length, unwanted, only_char, include, repeat):
         repeat = 'y'
     if not length and not only_char:
         length = random.randint(8, 16)
+    elif not length and only_char:
+        return ValueError('[-] Password length must be given.')
     possibility = (possibility * int(length)) if repeat.lower() == 'y' else possibility
     if length and ((int(length) > len(possibility)) or int(length) > 72):
-        return ValueError('[-] Password length must be less')
-    elif not length and only_char:
-        return ValueError('[-] Password length must be given')
+        return ValueError('[-] Password length must be less.')
     return "Password : " + "".join(random.sample(possibility, int(length)))
