@@ -8,7 +8,7 @@ setuptools.setup(
     packages = setuptools.find_packages(),
     version = '0.0.1',
     license='MIT',
-    description = 'pypasswdgen is a package to generate random passwords.',
+    description = 'genpasswd is a package to generate random passwords.',
     author = 'Gowthaman',
     author_email = 'rgngowthaman1@gmail.com',
     url = 'https://github.com/Gowthaman1401/GenPasswd',
