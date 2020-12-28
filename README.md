@@ -1,4 +1,4 @@
-## Project Description
+# GenPasswd
 
 GenPasswd is a package to generate random and strong passwords.
 
