@@ -1,6 +1,6 @@
 """Generate a strong password which includes alphabets, numbers, special characters"""
 
-__version__ = '0.0.1'
+__version__ = '0.1.0'
 
 from .genpasswd import password, pass_gen
 from .getargument import password
