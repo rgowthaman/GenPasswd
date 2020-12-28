@@ -1,23 +1,20 @@
-from distutils.core import setup
 import setuptools
 
-def readme():
-    with open(r'README.md') as f:
-        README = f.read()
-    return README
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
-setup(
-    name = 'pypasswdgen',
+setuptools.setup(
+    name = 'genpasswd',
     packages = setuptools.find_packages(),
-    version = '1.0.0',
+    version = '0.0.1',
     license='MIT',
     description = 'pypasswdgen is a package to generate random passwords.',
     author = 'Gowthaman',
     author_email = 'rgngowthaman1@gmail.com',
-    url = 'https://github.com/Gowthaman1401/PyPassGen',
-    download_url = 'https://github.com/Gowthaman1401/PyPassGen/archive/1.0.tar.gz',
+    url = 'https://github.com/Gowthaman1401/GenPasswd',
+    download_url = 'https://github.com/Gowthaman1401/GenPasswd/archive/1.0.tar.gz',
     include_package_data=True,
-    long_description=readme(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
     classifiers=[
         "Programming Language :: Python :: 3",
