@@ -106,7 +106,7 @@ def main(length=False, unwanted=False, only_char=False, include=False, repeat=Tr
             possibility = wanted_characters(only_char)
         if include:
             possibility = include_characters(include, possibility)
-    if repeat is None or repeat.lower() is True:
+    if repeat is None or repeat is True:
         repeat = 'y'
     if not length and not only_char:
         length = random.randint(8, 16)
