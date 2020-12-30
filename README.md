@@ -5,6 +5,7 @@ GenPasswd is a package to generate random and strong passwords.
 ## Installation
 
 [![PyPI](https://img.shields.io/pypi/v/genpasswd.svg)](https://pypi.python.org/pypi/genpasswd)
+[![Downloads](https://pepy.tech/badge/genpasswd)](https://pepy.tech/project/genpasswd)
 
 ## Using command-prompt
 
