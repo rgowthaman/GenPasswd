@@ -1,11 +1,11 @@
 # GenPasswd
 
-GenPasswd is a package to generate random and strong passwords.
+To generate random and strong passwords
 
 ## Installation
 
 [![PyPI](https://img.shields.io/pypi/v/genpasswd.svg)](https://pypi.python.org/pypi/genpasswd)
-[![Downloads](https://pepy.tech/badge/genpasswd)](https://pepy.tech/project/genpasswd)
+[![Downloads](https://pepy.tech/badge/genpasswd/month)](https://pepy.tech/project/genpasswd)
 
 ## Using command-prompt
 
@@ -40,7 +40,7 @@ arg = password(repeat='n')
 passwd = pass_gen(arg)
 print(passwd)
 ```
-Characters to ignore in passwords
+Characters to ignore in passwords.
 ```python
 # to ignore alphabets
 # you can also give 'numbers', 'uppercase', 'lowercase', 'symbols' to ignore then respectively
