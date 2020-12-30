@@ -35,8 +35,8 @@ print(passwd)
 ```
 Whether the characters in passwords repeat or not
 ```python
-# default value of repeat is 'y
-arg = password(repeat='n')  
+# default value of repeat is 'True'
+arg = password(repeat=False)  
 passwd = pass_gen(arg)
 print(passwd)
 ```
