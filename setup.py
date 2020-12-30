@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name = 'genpasswd',
     packages = setuptools.find_packages(),
-    version = '1.0.1',
+    version = '1.1.1',
     license='MIT',
     description = 'genpasswd is a package to generate random passwords.',
     author = 'Gowthaman',
