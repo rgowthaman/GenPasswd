@@ -5,7 +5,7 @@ To generate random and strong passwords
 ## Installation
 
 [![PyPI](https://img.shields.io/pypi/v/genpasswd.svg)](https://pypi.python.org/pypi/genpasswd)
-[![Downloads](https://pepy.tech/badge/genpasswd/month)](https://pepy.tech/project/genpasswd)
+![PyPI - License](https://img.shields.io/pypi/l/genpasswd)
 
 ## Using command-prompt
 
@@ -72,6 +72,3 @@ print(passwd)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-MIT
