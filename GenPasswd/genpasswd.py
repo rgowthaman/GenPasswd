@@ -1,14 +1,13 @@
 from . import functions
-from . import getargument
 
 
-def password():
-    return getargument.password()
+class Password:
+    def __init__(self, length=False, ignore=False, only=False, include=False, repeat=False):
+        self.length = length
+        self.ignore = ignore
+        self.only = only
+        self.include = include
+        self.repeat = repeat
 
-
-def passGen(given_tuple):
-    length, ignore, only, include, repeat = given_tuple
-    try:
-        return functions.main(length, ignore, only, include, repeat)
-    except ValueError:
-        raise ValueError
+    def genPass(self):
+        return functions.main(Length=self.length, Unwanted=self.ignore, Only_char=self.only, Include=self.include, Repeat=self.repeat)
