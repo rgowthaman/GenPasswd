@@ -23,8 +23,8 @@ def wanted_characters(characters):
         if choice.lower() == 'symbols':
             possibility += str('''!"%&'()*,+-./:;<=>?@[]^_`{|}~”$‘~#\\''')
         if not choice.lower() in ['numbers', 'alphabets', 'uppercase', 'lowercase', 'symbols']:
-            for unwanteds in choice:
-                possibility += unwanteds
+            for unwanted in choice:
+                possibility += unwanted
     return possibility
 
 
@@ -56,14 +56,13 @@ def include_characters(adding, characters):
                 if symbol not in possibility:
                     possibility += symbol
         if not choice.lower() in ['numbers', 'alphabets', 'uppercase', 'lowercase', 'symbols']:
-            for unwanteds in choice:
-                if unwanteds not in possibility:
-                    possibility += unwanteds
+            for temp_var in choice:
+                if temp_var not in possibility:
+                    possibility += temp_var
     return possibility
 
 
 def unwanted_characters(unwanted, possibility):
-    unwanted_lists, unwanted_characters_lists = '', ''
     try:
         choices = [characters for characters in unwanted.split(',')]
     except Exception:
@@ -86,32 +85,32 @@ def unwanted_characters(unwanted, possibility):
         if choice == 'symbols':
             for symbol in str('''!"%&'()*,+-./:;<=>?@[]^_`{|}~”$‘~#\\'''):
                 possibility = possibility.replace(symbol, '')
-        if not choice in ['numbers', 'alphabets', 'uppercase', 'lowercase', 'symbols']:
-            for unwanteds in choice:
-                possibility = possibility.replace(unwanteds, '')
+        if choice not in ['numbers', 'alphabets', 'uppercase', 'lowercase', 'symbols']:
+            for temp_var in choice:
+                possibility = possibility.replace(temp_var, '')
     return possibility
 
 
-def main(length=False, unwanted=False, only_char=False, include=False, repeat=True):
+def main(Length=False, Unwanted=False, Only_char=False, Include=False, Repeat=True):
     possibility = str(
         '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"%&'()*,+-./:;<=>?@[]^_`{|}~”$‘~#\\''')
-    if unwanted:
-        if only_char:
-            possibility = wanted_characters(only_char)
-        if include:
-            possibility = include_characters(include, possibility)
-        possibility = unwanted_characters(unwanted.lower(), possibility)
+    if Unwanted:
+        if Only_char:
+            possibility = wanted_characters(Only_char)
+        if Include:
+            possibility = include_characters(Include, possibility)
+        possibility = unwanted_characters(Unwanted.lower(), possibility)
     else:
-        if only_char:
-            possibility = wanted_characters(only_char)
-        if include:
-            possibility = include_characters(include, possibility)
-    repeat = 'y' if repeat is None or repeat is True else 'n'
-    if not length and not only_char:
-        length = random.randint(8, 16)
-    elif not length and only_char:
+        if Only_char:
+            possibility = wanted_characters(Only_char)
+        if Include:
+            possibility = include_characters(Include, possibility)
+    Repeat = 'y' if Repeat is None or Repeat is True else 'n'
+    if not Length and not Only_char:
+        Length = random.randint(8, 16)
+    elif not Length and Only_char:
         return ValueError('[-] Password length must be given.')
-    possibility = (possibility * int(length)) if repeat.lower() == 'y' else possibility
-    if length and ((int(length) > len(possibility)) or int(length) > 72):
+    possibility = (possibility * int(Length)) if Repeat.lower() == 'y' else possibility
+    if Length and ((int(Length) > len(possibility)) or int(Length) > 72):
         return ValueError('[-] Password length must be less.')
-    return "Password : " + "".join(random.sample(possibility, int(length)))
+    return "Password : " + "".join(random.sample(possibility, int(Length)))
