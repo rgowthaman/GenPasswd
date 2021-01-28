@@ -6,7 +6,7 @@ def get_argument():
     parser = optparse.OptionParser(usage='genpasswd [options]', version='genpasswd 1.1.3')
     parser.add_option("-l", "--length", dest="length", help="To set length to the password")
     parser.add_option("-r", "--repeat", dest="repeat", action='store_true', default=False, help="To repeat the characters in the password")
-    parser.add_option("-n", "--no", dest="no", help="To ignore unwanted characters to the password")
+    parser.add_option("-n", "--no", dest="ignore", help="To ignore unwanted characters to the password")
     parser.add_option("-o", "--only", dest="only", help="To create password only using wanted characters")
     parser.add_option("-i", "--include", dest="include", help="To include characters to the password")
     (options, argument) = parser.parse_args()
