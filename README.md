@@ -13,56 +13,68 @@ To generate random and strong passwords.
 
 ## Usage
 
-To generate a random password and print it on the screen.
-```python
-from genpasswd import *
-arg = Password()
-passwd = arg.genPass()
-print(passwd)
+```
+Usage : genpasswd [options]
+
+Options:
+  --version                            show program's version number and exit
+  -h,             --help               show this help message and exit
+  -l LENGTH,      --length=LENGTH      To set Length to the password
+  -r REPEAT,      --repeat             To repeat the characters in the password
+  -n IGNORE,      --no=IGNORE          To ignore unwanted characters to the password
+  -o ONLY,        --only=ONLY          To create password only using wanted characters
+  -i INCLUDE,     --include=INCLUDE    To include characters to the password
 ```
 
-## Some Other Examples
+###
+To generate a random password and print it on the screen.
+```
+> genpasswd
+kj(ot--4mJ1aeJ
+```
+###
 
 To set the password length, Default password length is `8-16`.
-```python
-from genpasswd import *
-arg = Password(length=5)
-passwd = arg.genPass()
-print(passwd)
+
 ```
+> genpasswd -l 10
+Q3m/vro|uR
+```
+###
+
 Whether the characters in passwords repeat or not,
-Default value of `repeat` is `True`.
-```python
-from genpasswd import *
-arg = Password(repeat=False)  
-passwd = arg.genPass()
-print(passwd)
+Default value of `repeat` is `False`.
 ```
-To ignore Characters, Numbers or special Characters in passwords. 
+> genpasswd -r
+96Ndl;1D>jQu4Z2
+```
+###
 
-```python
-from genpasswd import *
-# to ignore or avoid alphabets
-arg = Password(ignore='alphabets')
-passwd = arg.genPass()
-print(passwd)
-```
-To include Characters, Numbers or special Characters in passwords.
+You can include, ignore or using only `'alphabets'`, `'numbers'`, `'uppercase'`, `'lowercase'`, `symbols` and some `random characters` in generating password.
+###
 
-```python
-from genpasswd import *
-# to include numbers in a password
-arg = Password(include='numbers')
-passwd = arg.genPass()
-print(passwd)
-```
-To create a password only using Characters, Numbers or special Characters.
+To ignore `numbers` in passwords. 
 
-```python
-from genpasswd import *
-# to generate a password only using characters 'abcde'
-arg = Password(only='abcde', length=5)
-passwd = arg.genPass()
-print(passwd)
 ```
-You can include, ignore or using only `'alphabets'`, `'numbers'`, `'uppercase'`, `'lowercase'`, `'symbols'` in generating password.
+> genpasswd -n numbers
+uyMXP‘$!ZSCYqzj
+```
+###
+To ignore characters `a,b,c,d,e`
+```
+> genpasswd -n abcde
+~}t"R‘jF'ksG8~E
+```
+###
+To create a password only using `special characters`.
+
+```
+> genpasswd -o symbols -l 15
+?)".=-_^[_‘~{.)
+```
+###
+To include `a,b,c,d,e` characters in a password.
+```
+> genpasswd -o numbers -i abcde -l 15
+78713d1e3d926a3
+```
