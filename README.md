@@ -29,7 +29,7 @@ Options:
 ###
 To generate a random password and print it on the screen.
 ```
-> genpasswd
+> password
 kj(ot--4mJ1aeJ
 ```
 ###
@@ -37,7 +37,7 @@ kj(ot--4mJ1aeJ
 To set the password length, Default password length is `8-16`.
 
 ```
-> genpasswd -l 10
+> password -l 10
 Q3m/vro|uR
 ```
 ###
@@ -45,7 +45,7 @@ Q3m/vro|uR
 Whether the characters in passwords repeat or not,
 Default value of `repeat` is `False`.
 ```
-> genpasswd -r
+> password -r
 96Ndl;1D>jQu4Z2
 ```
 ###
@@ -56,25 +56,25 @@ You can include, ignore or using only `'alphabets'`, `'numbers'`, `'uppercase'`,
 To ignore `numbers` in passwords. 
 
 ```
-> genpasswd -n numbers
+> password -n numbers
 uyMXP‘$!ZSCYqzj
 ```
 ###
 To ignore characters `a,b,c,d,e`
 ```
-> genpasswd -n abcde
+> password -n abcde
 ~}t"R‘jF'ksG8~E
 ```
 ###
 To create a password only using `special characters`.
 
 ```
-> genpasswd -o symbols -l 15
+> password -o symbols -l 15
 ?)".=-_^[_‘~{.)
 ```
 ###
 To include `a,b,c,d,e` characters in a password.
 ```
-> genpasswd -o numbers -i abcde -l 15
+> password -o numbers -i abcde -l 15
 78713d1e3d926a3
 ```
