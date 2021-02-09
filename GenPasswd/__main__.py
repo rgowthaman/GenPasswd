@@ -3,7 +3,7 @@ from . import genpasswd
 
 
 def get_argument():
-    parser = optparse.OptionParser(usage='genpasswd [options]', version='genpasswd 1.1.5')
+    parser = optparse.OptionParser(usage='genpasswd [options]', version='genpasswd 1.1.6')
     parser.add_option("-l", "--length", dest="length", help="To set length to the password")
     parser.add_option("-r", "--repeat", dest="repeat", action='store_true', default=False,
                       help="To repeat the characters in the password")
