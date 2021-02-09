@@ -25,7 +25,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    entry_points={'console_scripts': ['genpasswd=genpasswd.passgen:main']
+    entry_points={'console_scripts': ['genpasswd=genpasswd.__main__:main']
                   },
     python_requires='>=3.6',
 )
