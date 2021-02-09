@@ -3,9 +3,10 @@ from . import genpasswd
 
 
 def get_argument():
-    parser = optparse.OptionParser(usage='genpasswd [options]', version='genpasswd 1.1.3')
+    parser = optparse.OptionParser(usage='genpasswd [options]', version='genpasswd 1.1.4')
     parser.add_option("-l", "--length", dest="length", help="To set length to the password")
-    parser.add_option("-r", "--repeat", dest="repeat", action='store_true', default=False, help="To repeat the characters in the password")
+    parser.add_option("-r", "--repeat", dest="repeat", action='store_true', default=False,
+                      help="To repeat the characters in the password")
     parser.add_option("-n", "--no", dest="ignore", help="To ignore unwanted characters to the password")
     parser.add_option("-o", "--only", dest="only", help="To create password only using wanted characters")
     parser.add_option("-i", "--include", dest="include", help="To include characters to the password")
@@ -13,9 +14,9 @@ def get_argument():
     return options
 
 
-def gen_Pass(rep, passlen=False, wanted=False, ign=False, inc=False):
+def gen_Password(rep, passlen=False, wanted=False, ign=False, inc=False):
     arg = genpasswd.Password(length=passlen, only=wanted, ignore=ign, include=inc, repeat=rep)
-    passwd = arg.genPass()
+    passwd = arg.generate()
     return passwd
 
 
