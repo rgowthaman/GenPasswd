@@ -9,7 +9,7 @@ To generate random and strong passwords.
 
 ## Installation
 
-`pip install genpasswd`
+`pip install -U genpasswd`
 
 ## Usage
 
