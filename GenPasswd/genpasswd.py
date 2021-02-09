@@ -9,5 +9,5 @@ class Password:
         self.include = include
         self.repeat = repeat
 
-    def genPass(self):
+    def generate(self):
         return functions.main(Length=self.length, Unwanted=self.ignore, Only_char=self.only, Include=self.include, Repeat=self.repeat)
