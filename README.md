@@ -17,13 +17,16 @@ To generate random and strong passwords.
 Usage : genpasswd [options]
 
 Options:
-  --version                            show program's version number and exit
-  -h,             --help               show this help message and exit
-  -l LENGTH,      --length=LENGTH      To set Length to the password
-  -r REPEAT,      --repeat             To repeat the characters in the password
-  -n IGNORE,      --no=IGNORE          To ignore unwanted characters to the password
-  -o ONLY,        --only=ONLY          To create password only using wanted characters
-  -i INCLUDE,     --include=INCLUDE    To include characters to the password
+  --version                                     show program's version number and exit
+  -h,                 --help                    show this help message and exit
+  -l LENGTH,          --length=LENGTH           To set Length to the password
+  -r REPEAT,          --repeat                  To repeat the characters in the password
+  -n IGNORE,          --no=IGNORE               To ignore unwanted characters to the password
+  -o ONLY,            --only=ONLY               To create password only using wanted characters
+  -i INCLUDE,         --include=INCLUDE         To include characters to the password
+  -s SEPARATOR,       --separator=SEPARATOR     The separator character
+  -c SEPARATORLENGTH, --seplen=SEPARATORLENGTH  The length of characters between separator
+  --separation                                  To separate password characters using separator
 ```
 
 ###
@@ -77,4 +80,16 @@ To include `a,b,c,d,e` characters in a password.
 ```
 > genpasswd -o numbers -i abcde -l 15
 78713d1e3d926a3
+```
+###
+To separate characters in a password using separator.
+```
+> genpasswd -o numbers -i abcde -l 15 --separation
+7871-3d1e-3d92-6a3
+```
+###
+To separate characters in a password using separator `_` with `5` characters between each separator.
+```
+> genpasswd -o numbers -i abcde -l 15 -s _ -c 5 
+78713_d1e3d_926a3
 ```
