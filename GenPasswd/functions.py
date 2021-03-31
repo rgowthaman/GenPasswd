@@ -91,7 +91,14 @@ def unwanted_characters(unwanted, possibility):
     return possibility
 
 
-def main(Length=False, Unwanted=False, Only_char=False, Include=False, Repeat=False):
+def seperator(original_pass, sep_length, seperator):
+    final_pass = ''
+    for i in range(len(original_pass)):
+        final_pass += seperator + original_pass[i] if i%sep_length==0 and i!=0 else original_pass[i]
+    return final_pass
+
+
+def main(Length=False, Unwanted=False, Only_char=False, Include=False, Repeat=False, Seperator_length=False, Seperator=False):
     possibility = str(
         '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"%&'()*,+-./:;<=>?@[]^_`{|}~”$‘~#\\''')
     if Unwanted:
@@ -113,4 +120,15 @@ def main(Length=False, Unwanted=False, Only_char=False, Include=False, Repeat=Fa
     possibility = (possibility * int(Length)) if Repeat.lower() == 'y' else possibility
     if Length and ((int(Length) > len(possibility)) or int(Length) > 72):
         return ValueError('[-] Password length must be less.')
-    return "".join(random.sample(possibility, int(Length)))
+    if Seperator or Seperator_length:
+        if Seperator == True:
+            if not Seperator_length:
+                Seperator_length = 4
+            Seperator = "-"
+        if not Seperator:
+            Seperator = "-"
+        if not Seperator_length:
+            Seperator_length = 4
+        return seperator("".join(random.sample(possibility, int(Length))), Seperator_length, Seperator)
+    else:
+        return "".join(random.sample(possibility, int(Length)))
