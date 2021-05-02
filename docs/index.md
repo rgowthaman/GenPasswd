@@ -1,37 +1,95 @@
-## Welcome to GitHub Pages
+# GenPasswd
 
-You can use the [editor on GitHub](https://github.com/Gowthaman1401/GenPasswd/edit/gh-pages/docs/index.md) to maintain and preview the content for your website in Markdown files.
+[![PyPI](https://img.shields.io/pypi/v/genpasswd)](https://pypi.python.org/pypi/genpasswd)
+[![PyPI - License](https://img.shields.io/pypi/l/genpasswd)](https://github.com/Gowthaman1401/GenPasswd/blob/main/LICENSE)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Gowthaman1401/GenPasswd?color=orange&include_prereleases)](https://github.com/Gowthaman1401/GenPasswd/releases)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/genpasswd?color=red)](https://pypi.python.org/pypi/genpasswd)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+To generate random and strong passwords.
 
-### Markdown
+## Installation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+`pip install -U genpasswd`
 
-```markdown
-Syntax highlighted code block
+## Usage
 
-# Header 1
-## Header 2
-### Header 3
+```
+Usage : genpasswd [options]
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Options:
+  --version                                     show program's version number and exit
+  -h,                 --help                    show this help message and exit
+  -l LENGTH,          --length=LENGTH           To set Length to the password
+  -r REPEAT,          --repeat                  To repeat the characters in the password
+  -n IGNORE,          --no=IGNORE               To ignore unwanted characters to the password
+  -o ONLY,            --only=ONLY               To create password only using wanted characters
+  -i INCLUDE,         --include=INCLUDE         To include characters to the password
+  -s SEPARATOR,       --separator=SEPARATOR     The separator character
+  -c SEPARATORLENGTH, --seplen=SEPARATORLENGTH  The length of characters between separator
+  --separation                                  To separate password characters using separator
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+###
+To generate a random password and print it on the screen.
+```
+> genpasswd
+kj(ot--4mJ1aeJ
+```
+###
 
-### Jekyll Themes
+To set the password length, Default password length is `8-16`.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Gowthaman1401/GenPasswd/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
+> genpasswd -l 10
+Q3m/vro|uR
+```
+###
 
-### Support or Contact
+Whether the characters in passwords repeat or not,
+Default value of `repeat` is `False`.
+```
+> genpasswd -r
+96Ndl;1D>jQu4Z2
+```
+###
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+You can include, ignore or using only `'alphabets'`, `'numbers'`, `'uppercase'`, `'lowercase'`, `symbols` and some `random characters` in generating password.
+###
+
+To ignore `numbers` in passwords. 
+
+```
+> genpasswd -n numbers
+uyMXP‘$!ZSCYqzj
+```
+###
+To ignore characters `a,b,c,d,e`
+```
+> genpasswd -n abcde
+~}t"R‘jF'ksG8~E
+```
+###
+To create a password only using `special characters`.
+
+```
+> genpasswd -o symbols -l 15
+?)".=-_^[_‘~{.)
+```
+###
+To include `a,b,c,d,e` characters in a password.
+```
+> genpasswd -o numbers -i abcde -l 15
+78713d1e3d926a3
+```
+###
+To separate characters in a password using separator.
+```
+> genpasswd -o numbers -i abcde -l 15 --separation
+7871-3d1e-3d92-6a3
+```
+###
+To separate characters in a password using separator `_` with `5` characters between each separator.
+```
+> genpasswd -o numbers -i abcde -l 15 -s _ -c 5 
+78713_d1e3d_926a3
+```
