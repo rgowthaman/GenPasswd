@@ -1,4 +1,4 @@
-# GenPasswd
+# [GenPasswd](https://pypi.python.org/pypi/genpasswd)
 
 [![PyPI](https://img.shields.io/pypi/v/genpasswd)](https://pypi.python.org/pypi/genpasswd)
 [![PyPI - License](https://img.shields.io/pypi/l/genpasswd)](https://github.com/Gowthaman1401/GenPasswd/blob/main/LICENSE)
