@@ -1,8 +1,7 @@
-# [GenPasswd](https://pypi.python.org/pypi/genpasswd)
+# GenPasswd
 
 [![PyPI](https://img.shields.io/pypi/v/genpasswd)](https://pypi.python.org/pypi/genpasswd)
-[![PyPI - License](https://img.shields.io/pypi/l/genpasswd)](https://github.com/Gowthaman1401/GenPasswd/blob/main/LICENSE)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Gowthaman1401/GenPasswd?color=orange&include_prereleases)](https://github.com/Gowthaman1401/GenPasswd/releases)
+[![PyPI - License](https://img.shields.io/pypi/l/genpasswd)](https://github.com/rgowthaman/GenPasswd/blob/main/LICENSE)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/genpasswd?color=red)](https://pypi.python.org/pypi/genpasswd)
 
 To generate random and strong passwords.
@@ -14,19 +13,21 @@ To generate random and strong passwords.
 ## Usage
 
 ```
-Usage : genpasswd [options]
+usage: genpasswd [options]
 
-Options:
-  --version                                     show program's version number and exit
-  -h,                 --help                    show this help message and exit
-  -l LENGTH,          --length=LENGTH           To set Length to the password
-  -r REPEAT,          --repeat                  To repeat the characters in the password
-  -n IGNORE,          --no=IGNORE               To ignore unwanted characters to the password
-  -o ONLY,            --only=ONLY               To create password only using wanted characters
-  -i INCLUDE,         --include=INCLUDE         To include characters to the password
-  -s SEPARATOR,       --separator=SEPARATOR     The separator character
-  -c SEPARATORLENGTH, --seplen=SEPARATORLENGTH  The length of characters between separator
-  --separation                                  To separate password characters using separator
+optional arguments:
+  -h, --help         show this help message and exit
+  -v, --version      show version number and exit.
+
+to customize Password:
+  -l , --length      to set length to the password
+  -n , --ignore      to ignore unwanted characters to the password
+  -i , --include     to include characters to the password
+  -o , --only        to create password only using wanted characters
+  -s , --separator   the separator character
+  -c , --seplen      the length of characters between separator
+  --repeat           to repeat the characters in the password (default : False)
+  --separation       to separate password characters using separator (default : False)
 ```
 
 ###
@@ -53,7 +54,7 @@ Default value of `repeat` is `False`.
 ```
 ###
 
-You can include, ignore or using only `'alphabets'`, `'numbers'`, `'uppercase'`, `'lowercase'`, `symbols` and some `random characters` in generating password.
+You can include, ignore or using only `'alphabets'`, `'numbers'`, `'uppercase'`, `'lowercase'`, `'symbols'` and some `random characters` in generating password.
 ###
 
 To ignore `numbers` in passwords. 
@@ -93,3 +94,7 @@ To separate characters in a password using separator `_` with `5` characters bet
 > genpasswd -o numbers -i abcde -l 15 -s _ -c 5 
 78713_d1e3d_926a3
 ```
+
+## Issues:
+
+If you encounter any problems, please file an [issue](https://github.com/rgowthaman/GenPasswd/issues) along with a detailed description.

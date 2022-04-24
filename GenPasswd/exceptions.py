@@ -1,0 +1,2 @@
+class GenpasswdException(Exception):
+    pass
