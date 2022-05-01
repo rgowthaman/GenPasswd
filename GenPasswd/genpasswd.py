@@ -92,7 +92,7 @@ class PasswordGenerator:
             self.__error = ValueError('[-] Password length must be less.')
 
     def __separated_pass(self):
-        if self.separator is bool:
+        if type(self.separator) is bool:
             self.separator = constants.DEFAULT_SEPARATOR
         if not self.separator_length:
             self.separator_length = constants.DEFAULT_SEPARATE_LENGTH

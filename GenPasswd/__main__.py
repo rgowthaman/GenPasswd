@@ -12,7 +12,7 @@ from . import genpasswd
 
 def get_argument():
     parser = argparse.ArgumentParser(usage="genpasswd [options]")
-    parser.add_argument('-v', '--version', action='version', help='show version number and exit.', version="1.3.3")
+    parser.add_argument('-v', '--version', action='version', help='show version number and exit.', version="1.3.4")
     group = parser.add_argument_group("to customize Password")
     group.add_argument("-l", "--length", dest="length", type=int, metavar='', help="to set length to the password")
     group.add_argument("-n", "--ignore", dest="ignore", metavar='',
